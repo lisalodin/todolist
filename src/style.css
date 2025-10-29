@@ -1,96 +1,49 @@
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0; /* Tar bort standard marginal */
+  display: flex; /* Använder flexbox för layout */
+  flex-direction: column; /* Ställer in flex-riktning till kolumn */
+  align-items: center; /* Centrerar horisontellt */
+  min-height: 100vh; /* Gör så att body täcker hela höjden av viewporten */
+  background-color: #6e8499; /* Ljus bakgrundsfärg */
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 300px; /* Sätter en fast bredd på listan */
+  margin-top: 100px; /* Lägger till lite avstånd från toppen */
+  font-size: large; /* Större textstorlek för bättre läsbarhet */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+#app li {
+  background-color: #ffffff; /* Ljus bakgrund för varje lista element */
+  margin-bottom: 10px; /* Mellanrum mellan listobjekt */
+  padding: 10px; /* Inre marginal för bättre utseende */
+  border-radius: 5px; /* Rundade hörn */
+  display: flex; /* Använder flexbox för layout */
+  align-items: center; /* Centrerar innehållet vertikalt */
+  gap: 10px; /* Mellanrum mellan checkbox och text */
+  
 }
 
-.card {
-  padding: 2em;
+form {
+  margin-top: 20px; /* Lägger till avstånd ovanför formuläret */
+  display: flex; /* Använder flexbox för layout */
+  flex-direction: column; /* Ställer in flex-riktning till kolumn */
+  align-items: center; /* Centrerar horisontellt */
+  gap: 10px; /* Lägger till mellanrum mellan elementen i formuläret */
 }
 
-.read-the-docs {
-  color: #888;
+#form label {
+  font-size: medium; /* Större textstorlek för etiketten */
+  color: #ffffff; /* Vit textfärg för etiketten */
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: #ffffff; /* Grön bakgrundsfärg */
+  color: #000000; /* Vit textfärg */
+  padding: 10px 20px; /* Inre marginal för bättre utseende */
+  border: none; /* Tar bort standard kantlinje */
+  border-radius: 5px; /* Rundade hörn */
+  cursor: pointer; /* Ändrar muspekaren vid hovring */
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

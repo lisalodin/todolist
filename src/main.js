@@ -50,7 +50,6 @@ const createToDoElement = (list) => {  // funktion för att skapa en todo elemen
     }
 
     checkbox.addEventListener("click", () => { // när man klickar på checkbox
-        listLi.classList.toggle("text-decoration-line-through"); // lägger till eller tar bort genomstrykning
         list.finished = !list.finished; // togglar finished mellan true och false
         localStorage.setItem("todos", JSON.stringify(newTodo)); // uppdaterar localStorage
 
