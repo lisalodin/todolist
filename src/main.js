@@ -44,6 +44,7 @@ const createToDoElement = (list) => {  // funktion för att skapa en todo elemen
     listLi.appendChild(checkbox); // lägger till checkboxen i li
     listLi.appendChild(document.createTextNode(list.toDo)); // lägger till texten i li
 
+
     if (list.finished === true) { // om listan är klar
         listLi.classList.add("text-decoration-line-through"); // lägger till genomstrykning
     }
@@ -52,11 +53,16 @@ const createToDoElement = (list) => {  // funktion för att skapa en todo elemen
         listLi.classList.toggle("text-decoration-line-through"); // lägger till eller tar bort genomstrykning
         list.finished = !list.finished; // togglar finished mellan true och false
         localStorage.setItem("todos", JSON.stringify(newTodo)); // uppdaterar localStorage
+
+        newTodo.sort((a, b) => a.finished - b.finished); // sorterar så att klara saker hamnar längst ner
+        app.innerHTML = ""; // tömmer app
+        newTodo.forEach(createToDoElement); // skapar om todo elementen i rätt ordning
     });
 
     app.appendChild(listLi); // lägger till li i app
 }
 
+newTodo.sort((a, b) => a.finished - b.finished); // sorterar så att klara saker hamnar längst ner
 newTodo.forEach(createToDoElement); // anropar funktionen createToDoElement med varje sak i listan
 
 
@@ -65,7 +71,7 @@ newTodo.forEach(createToDoElement); // anropar funktionen createToDoElement med 
 
 const form = document.getElementById("form"); // hämtar formuläret med id:t form
 form.addEventListener("submit", (event) => { // när man skickar in formuläret
-    event.preventDefault(); // förhindrar att sidan laddas om
+    event.preventDefault(); // förhindrar sidan att laddas om
 
 const textFromUser = document.getElementById("userInput").value; // hämtar värdet från inputfältet
 
